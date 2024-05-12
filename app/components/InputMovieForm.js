@@ -3,11 +3,19 @@
 import { useState } from "react";
 import { Box, Typography, Button, TextField, MenuItem } from "@mui/material";
 
-export default function InputMovieForm() {
+export default function InputMovieForm({addMovie}) {
   const [title, setTitle] = useState('');
   const [grade, setGrade] = useState('');
 
   const handleSubmit = e => {
+    e.preventDefault();
+    if (!title || !grade) {
+      alert('Fyll i alla fält');
+      return;
+    }
+    addMovie({title, grade});
+    setTitle('');
+    setGrade('');
 };
 
   return (
@@ -33,11 +41,11 @@ export default function InputMovieForm() {
           onChange={e => setGrade(e.target.value)}
           select
         >
-          <MenuItem value="1">1</MenuItem>
-          <MenuItem value="2">2</MenuItem>
-          <MenuItem value="3">3</MenuItem>
-          <MenuItem value="4">4</MenuItem>
-          <MenuItem value="5">5</MenuItem>
+          <MenuItem value={1}>1</MenuItem>
+          <MenuItem value={2}>2</MenuItem>
+          <MenuItem value={3}>3</MenuItem>
+          <MenuItem value={4}>4</MenuItem>
+          <MenuItem value={5}>5</MenuItem>
         </TextField>
         </div>
         <Button type="submit" variant="contained" sx={{mt: 1, mx: 1, backgroundColor: 'green'}}>Lägg till film</Button>

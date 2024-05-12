@@ -5,8 +5,12 @@ import { useState } from "react";
 import InputMovieForm from "./InputMovieForm";
 import {Box, Button, Typography } from '@mui/material';
 
-export default function MovieList() {
+export default function MovieApp() {
   const [movies, setMovies] = useState([]);
+
+  const addMovie = movie => {
+    setMovies([...movies, movie]);
+};
 
   const sortAlphabetical = () => {
     const sortedMovies = [...movies].sort((a, b) => a.title.localeCompare(b.title));
