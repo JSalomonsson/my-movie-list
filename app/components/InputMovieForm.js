@@ -9,8 +9,12 @@ export default function InputMovieForm({addMovie}) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (!title || !grade) {
-      alert('Fyll i alla fält');
+    if (!title) {
+      alert('Fyll i titel på filmen!');
+      return;
+    }
+    if (!grade || grade < 1 || grade > 5) {
+      alert('Fyll i ett giltigt betyg på filmen!');
       return;
     }
     addMovie({title, grade});
@@ -21,7 +25,7 @@ export default function InputMovieForm({addMovie}) {
   return (
     <Box>
       <Typography variant="h4" sx={{mx: 1}}>Lägg till en film</Typography>
-      <hr />
+      <hr style={{marginTop: 5}}/>
       <form onSubmit={handleSubmit}>
         <div>
         <Typography variant="h6" sx={{mt: 2, mx: 1, fontWeight: 'bold'}}>Titel</Typography> 
@@ -50,6 +54,7 @@ export default function InputMovieForm({addMovie}) {
         </div>
         <Button type="submit" variant="contained" sx={{mt: 1, mx: 1, backgroundColor: 'green'}}>Lägg till film</Button>
       </form>
+      <hr style={{marginTop: 10}}/>
     </Box>
 );
 
