@@ -4,28 +4,34 @@ import { useState } from "react";
 import InputMovieForm from "./InputMovieForm";
 import {Box, Button, Typography } from '@mui/material';
 import MovieList from "./MovieList";
+
 //create the movieapp
 export default function MovieApp() {
   const [movies, setMovies] = useState([]);
-//add movie to list
+
+//add movie to the list
   const addMovie = movie => {
     setMovies([...movies, movie]);
 };
-//remove movie from list
+
+//remove movie from the list
 const deleteMovie = title => {
     setMovies(movies.filter(movie => movie.title !== title));
 };
-//sort movies by title
+
+//sort movies by their title
   const sortAlphabetical = () => {
     const sortedMovies = [...movies].sort((a, b) => a.title.localeCompare(b.title));
     setMovies(sortedMovies);
 };
-//sort movies by grade
+
+//sort movies by their grade
 const sortByGrade = () => {
     const sortedMovies = [...movies].sort((a, b) => b.grade - a.grade);
     setMovies(sortedMovies);
 };
-//return the movieapp
+
+//return the MovieApp
   return (
    <Box sx={{
     maxWidth: 600,

@@ -6,7 +6,8 @@ import { Box, Typography, Button, TextField, MenuItem, Divider } from "@mui/mate
 export default function InputMovieForm({addMovie}) {
   const [title, setTitle] = useState('');
   const [grade, setGrade] = useState('');
-//handle submit
+
+//handle submmission of movie
   const handleSubmit = e => {
     e.preventDefault();
     //check if title is valid
@@ -24,7 +25,8 @@ export default function InputMovieForm({addMovie}) {
     setTitle('');
     setGrade('');
 };
-//return the inputmovieform
+
+//return the InputMovieForm
   return (
     <Box>
       <Typography variant="h4" sx={{mx: 1, textAlign:"left"}}>Lägg till en film</Typography>

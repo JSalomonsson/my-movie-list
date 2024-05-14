@@ -3,7 +3,7 @@
 import { Box, Typography, Paper } from "@mui/material";
 
 export default function MovieList ({movies, deleteMovie}) {
-//display stars
+//display stars based on the grade
   const displayStars = (grade) => {
     let stars = [];
     for (let i = 0; i < grade; i++) {
@@ -11,7 +11,8 @@ export default function MovieList ({movies, deleteMovie}) {
     }
     return stars;
   };
-//return the movielist
+
+//return the MovieList
   return (
     <Box>
       <Typography variant="h4" sx={{ mt: 2, mx: 1, textAlign: 'left' }}>Inlagda filmer</Typography>
