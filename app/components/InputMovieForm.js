@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Box, Typography, Button, TextField, MenuItem } from "@mui/material";
+import { Box, Typography, Button, TextField, MenuItem, Divider } from "@mui/material";
 
 export default function InputMovieForm({addMovie}) {
   const [title, setTitle] = useState('');
@@ -27,22 +27,22 @@ export default function InputMovieForm({addMovie}) {
 //return the inputmovieform
   return (
     <Box>
-      <Typography variant="h4" sx={{mx: 1}}>Lägg till en film</Typography>
-      <hr style={{marginTop: 5}}/>
+      <Typography variant="h4" sx={{mx: 1, textAlign:"left"}}>Lägg till en film</Typography>
+      <Divider sx={{mt: 2}}/>
       <form onSubmit={handleSubmit}>
         <div>
-        <Typography variant="h6" sx={{mt: 2, mx: 1, fontWeight: 'bold'}}>Titel</Typography> 
+        <Typography variant="h6" sx={{mt: 2, mx: 1, fontWeight: 'bold', textAlign:"left"}}>Titel</Typography> 
         <TextField
-          sx = {{mt: 1, mx: 1, width: '90%'}}
+          sx = {{mt: 1, mx: 1, width: '100%'}}
           label="Titel"
           value={title}
           onChange={e => setTitle(e.target.value)}
         />
         </div>
         <div>
-         <Typography variant="h6" sx={{mt: 2, mx: 1, fontWeight: 'bold'}}>Betyg</Typography> 
+         <Typography variant="h6" sx={{mt: 2, mx: 1, fontWeight: 'bold', textAlign:"left"}}>Betyg</Typography> 
         <TextField
-          sx = {{mt: 1, mx: 1, width: '90%'}}
+          sx = {{mt: 1, mx: 1, width: '100%'}}
           label="Betyg"
           value={grade}
           onChange={e => setGrade(e.target.value)}
@@ -55,9 +55,11 @@ export default function InputMovieForm({addMovie}) {
           <MenuItem value={5}>5</MenuItem>
         </TextField>
         </div>
+        <Box sx={{textAlign: 'left'}}>
         <Button type="submit" variant="contained" sx={{mt: 1, mx: 1, backgroundColor: 'green'}}>Lägg till film</Button>
+        </Box>
       </form>
-      <hr style={{marginTop: 10}}/>
+      <Divider sx={{mt: 2}}/>
     </Box>
 );
 

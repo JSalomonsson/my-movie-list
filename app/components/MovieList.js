@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { Box, Typography, Paper } from "@mui/material";
 
 export default function MovieList ({movies, deleteMovie}) {
@@ -15,7 +14,7 @@ export default function MovieList ({movies, deleteMovie}) {
 //return the movielist
   return (
     <Box>
-      <Typography variant="h4" sx={{ mt: 2, mx: 1 }}>Inlagda filmer</Typography>
+      <Typography variant="h4" sx={{ mt: 2, mx: 1, textAlign: 'left' }}>Inlagda filmer</Typography>
       {movies.map((movie, index) => (
         <Paper key={index} sx={{ mt: 2, mx: 1, p: 2, width: '90%', backgroundColor: '#bdbdbd' }}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>  

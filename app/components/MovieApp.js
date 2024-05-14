@@ -1,6 +1,5 @@
 "use client";
 
-import { Input } from "postcss";
 import { useState } from "react";
 import InputMovieForm from "./InputMovieForm";
 import {Box, Button, Typography } from '@mui/material';
@@ -28,12 +27,19 @@ const sortByGrade = () => {
 };
 //return the movieapp
   return (
-   <Box maxWidth="sm">
-      <Typography variant="h2" sx={{mx: 1, mt:1}}>Min Filmlista</Typography>
+   <Box sx={{
+    maxWidth: 600,
+    mx: "auto",
+    p: 2,
+    textAlign: "center"
+  }}>
+      <Typography variant="h2" sx={{mx: 1, mt:1, textAlign:"left"}}>Min Filmlista</Typography>
       <InputMovieForm addMovie={movie => setMovies([...movies, movie])} />
       <MovieList movies={movies} deleteMovie={deleteMovie} />
+      <Box sx={{textAlign: 'left', mb: 2}}>
       <Button sx={{mt: 1, mx: 1}} variant="contained" onClick={sortAlphabetical}>Alfabetisk ordning</Button>
       <Button sx={{mt: 1, mx: 1}} variant="contained" onClick={sortByGrade}>Betygsordning</Button>
+      </Box>
   </Box>
   );
 }
