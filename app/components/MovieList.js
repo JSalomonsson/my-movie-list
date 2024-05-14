@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Box, Typography, Paper } from "@mui/material";
 
 export default function MovieList ({movies, deleteMovie}) {
-
+//display stars
   const displayStars = (grade) => {
     let stars = [];
     for (let i = 0; i < grade; i++) {
@@ -12,7 +12,7 @@ export default function MovieList ({movies, deleteMovie}) {
     }
     return stars;
   };
-
+//return the movielist
   return (
     <Box>
       <Typography variant="h4" sx={{ mt: 2, mx: 1 }}>Inlagda filmer</Typography>

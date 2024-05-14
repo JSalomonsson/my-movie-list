@@ -6,22 +6,25 @@ import { Box, Typography, Button, TextField, MenuItem } from "@mui/material";
 export default function InputMovieForm({addMovie}) {
   const [title, setTitle] = useState('');
   const [grade, setGrade] = useState('');
-
+//handle submit
   const handleSubmit = e => {
     e.preventDefault();
+    //check if title is valid
     if (!title) {
       alert('Fyll i titel på filmen!');
       return;
     }
+    //check if grade is valid
     if (!grade || grade < 1 || grade > 5) {
       alert('Fyll i ett giltigt betyg på filmen!');
       return;
     }
+    //adds the movie
     addMovie({title, grade});
     setTitle('');
     setGrade('');
 };
-
+//return the inputmovieform
   return (
     <Box>
       <Typography variant="h4" sx={{mx: 1}}>Lägg till en film</Typography>
