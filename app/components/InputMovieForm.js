@@ -11,7 +11,7 @@ export default function InputMovieForm({addMovie}) {
   const handleSubmit = e => {
     e.preventDefault();
     //check if title is valid
-    if (!title) {
+    if (!title || title.trim() === '') {
       alert('Fyll i titel på filmen!');
       return;
     }
@@ -44,7 +44,7 @@ export default function InputMovieForm({addMovie}) {
         <div>
          <Typography variant="h6" sx={{mt: 2, mx: 1, fontWeight: 'bold', textAlign:"left"}}>Betyg</Typography> 
         <TextField
-          sx = {{mt: 1, mx: 1, width: '100%'}}
+          sx = {{mt: 1, mx: 1, width: '100%', textAlign: 'left'}}
           label="Betyg"
           value={grade}
           onChange={e => setGrade(e.target.value)}

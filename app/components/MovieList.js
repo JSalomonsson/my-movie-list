@@ -17,7 +17,7 @@ export default function MovieList ({movies, deleteMovie}) {
     <Box>
       <Typography variant="h4" sx={{ mt: 2, mx: 1, textAlign: 'left' }}>Inlagda filmer</Typography>
       {movies.map((movie, index) => (
-        <Paper key={index} sx={{ mt: 2, mx: 1, p: 2, width: '90%', backgroundColor: '#bdbdbd' }}>
+        <Paper key={index} sx={{ mt: 2, mx: 1, p: 2, width: '100%', backgroundColor: '#EBEDEE' }}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>  
             <Typography sx={{ ml: 1, fontWeight: 'bold' }}>{movie.title}</Typography>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
